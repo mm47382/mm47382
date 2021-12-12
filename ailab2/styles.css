@@ -1,0 +1,86 @@
+:root {
+  --primary-color: lightgreen;
+  --secondary-color: #b55;
+  --secondary-color-dark: #733;
+  --text-color: lightyellow;
+}
+html {
+  font-family: "Lucida Sans", sans-serif;
+  color: var(--text-color);
+  background-image: url("background.jpg");
+  background-position: center;
+}
+.header {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 15px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  text-decoration: underline;
+}
+
+a.top-link {
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: var(--secondary-color-dark);
+}
+
+.menu li {
+  padding: 8px;
+  margin-bottom: 7px;
+  background-color: var(--secondary-color);
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.menu li:hover {
+  background-color: var(--secondary-color-dark);
+}
+
+.aside {
+  background-color: var(--secondary-color);
+  padding: 15px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.footer {
+  background-color: var(--secondary-color-dark);
+  color: #ffffff;
+  text-align: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+.advert {
+  width: 100%;
+  background-image: url("background.jpg");
+}
+.box {
+  position: relative;
+}
+
+.box h3 {
+  color: var(--primary-color);
+  position: absolute;
+}
+
+img {
+  width: 100%;
+}

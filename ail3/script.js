@@ -1,6 +1,7 @@
 window.onload = function () {
   renderTodoList();
 };
+
 document.addEventListener("edit", (e) => {
   handleEdit(e);
 });
@@ -16,11 +17,13 @@ function renderTodoList() {
   addOnClick(add, handleAdd);
   addOnClick(esc, handleEsc);
 }
+
 function reRenderTodoList() {
   const todosSelector = document.getElementById("todos");
   todosSelector.innerHTML = "";
   renderTodoList();
 }
+
 function addOnClick(node, callback) {
   node.addEventListener("click", callback);
 }
@@ -38,6 +41,7 @@ function validateCode(textbox) {
   }
   return false;
 }
+
 function validateTask(textbox) {
   if (textbox.value.length < 3 || textbox.value.length > 255) {
     textbox.setCustomValidity(
