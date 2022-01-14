@@ -3,7 +3,6 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-  console.log();
   if (ev.target.parentElement.value === "taken") {
     ev.target.parentElement.value = "empty";
   }
@@ -11,11 +10,10 @@ function drag(ev) {
 }
 
 function drop(ev) {
+  ev.preventDefault();
   const evaluate = ev.target.parentElement.value
     ? ev.target.value
     : ev.target.parentElement.value;
-  ev.preventDefault();
-  const element = document.getElementById(ev.target.id);
   if (evaluate !== "taken") {
     var data = ev.dataTransfer.getData("text");
     ev.target.appendChild(document.getElementById(data));
@@ -29,6 +27,7 @@ function drop(ev) {
 
 function notifyUser() {
   if (window.Notification && Notification.permission !== "denied") {
+    if (Notification.permission !== "granted") Notification.requestPermission();
     new Notification("Puzzle Map", {
       body: "Gratulacje puzzle ułozone!",
     });
@@ -144,13 +143,6 @@ const setupMap = () => {
   return map;
 };
 const setupListeners = (map) => {
-  document.addEventListener("DOMContentLoaded", function () {
-    if (!Notification) {
-      alert("Desktop notifications not available in your browser.");
-      return;
-    }
-    if (Notification.permission !== "granted") Notification.requestPermission();
-  });
   document
     .getElementById("save-raster")
     .addEventListener("click", () => getImage(map));
@@ -163,7 +155,6 @@ const setupListeners = (map) => {
 
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          console.log(position);
           let lat = position.coords.latitude;
           let lon = position.coords.longitude;
 
@@ -179,4 +170,9 @@ const setupListeners = (map) => {
 window.onload = () => {
   let map = setupMap();
   setupListeners(map);
+  if (!Notification) {
+    alert("Desktop notifications not available in your browser.");
+    return;
+  }
+  if (Notification.permission !== "granted") Notification.requestPermission();
 };
