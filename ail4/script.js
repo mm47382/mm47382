@@ -69,7 +69,7 @@ function shuffle(arr) {
 const getImage = (map) => {
   leafletImage(map, function (err, canv) {
     const dimensions = map.getSize();
-    const rowCount = 1;
+    const rowCount = 3;
     const widthOfOnePiece = dimensions.x / rowCount;
     const heightOfOnePiece = dimensions.y / rowCount;
     var imageItems = [];
