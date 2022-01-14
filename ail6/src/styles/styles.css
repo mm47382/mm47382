@@ -7,7 +7,7 @@
 html {
   font-family: "Lucida Sans", sans-serif;
   color: var(--text-color);
-  background-image: url("background.jpg");
+  background-image: url("../../assets/background.jpg");
   background-position: center;
 }
 .header {
@@ -70,7 +70,7 @@ a {
 
 .advert {
   width: 100%;
-  background-image: url("background.jpg");
+  background-image: url("../../assets/background.jpg");
 }
 .box {
   position: relative;
